@@ -31,8 +31,8 @@ public:
         collider.y = static_cast<int>(transform->position.y);
         collider.w = transform->width * transform->scale;
         collider.h = transform->height * transform->scale;
-        destinationRectangle.x = collider.x - Game::camera.x;
-        destinationRectangle.y = collider.y - Game::camera.y;
+        destinationRectangle.x = collider.x;
+        destinationRectangle.y = collider.y;
     }
 };
 

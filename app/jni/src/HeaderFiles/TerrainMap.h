@@ -12,10 +12,8 @@ class TerrainMap {
 	public:
 		TerrainMap(std::string textureID, int scale, int tileSize);
 		~TerrainMap();
-		void LoadMapCSV(std::string filePath, int mapSizeX, int mapSizeY);
+		void LoadTilemap(std::string filePath, int mapSizeX, int mapSizeY);
 		void AddTile(int sourceX, int sourceY, int x, int y);
-
-
 
 };
 

@@ -3,7 +3,7 @@
 
 int main(int argc,char *args[]){
 
-    Game* game = new Game();
+    Game* game = Game::getInstance();
 
     //Game对象初始化
     game->Initialize(WINDOW_WIDTH,WINDOW_HEIGHT);

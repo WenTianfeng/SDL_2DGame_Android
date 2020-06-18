@@ -53,7 +53,7 @@ public:
 
     }
 
-    void Render() override{
+    void Render(float offsetX,float offsetY) override{
         TextureManager::DrawTexture(projectileTexture, sourceRect, destRect, SDL_FLIP_NONE);
     }
 

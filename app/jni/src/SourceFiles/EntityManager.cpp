@@ -2,6 +2,8 @@
 #include "../HeaderFiles/Coliision.h"
 #include "../Components/ComponentCollider.h"
 
+EntityManager::EntityManager(){}
+
 void EntityManager::ClearEntitiesData(){
     for (auto& entity:entities)
     {
@@ -23,14 +25,14 @@ void EntityManager::Update(float deltaTime){
     
 
 }
-void EntityManager::Render(){
+void EntityManager::Render(float offsetX,float offsetY){
     
 
     for (int layerNum= 0;  layerNum<LAYER_COUNT; layerNum++)
     {
         for (auto& entity : GetEntitiesByLayer(static_cast<LayerType>(layerNum)))
         {
-            entity->Render();
+            entity->Render(offsetX,offsetY);
         }
     }
 

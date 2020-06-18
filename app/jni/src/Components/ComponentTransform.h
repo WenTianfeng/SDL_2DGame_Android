@@ -37,7 +37,9 @@ class ComponentTransform:public Component,public IControlledByJoystick{
 
         }
 
-        void Render() override{}
+
+
+//=================IControlledByJoystick接口实现===================
 
         //实现接口函数：随着轮盘输入得到的向量更改自身移动
         virtual void UpdateByJoystick(glm::vec2 normalizedDir) {

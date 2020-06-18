@@ -1,8 +1,6 @@
 #include"../HeaderFiles/AssetManager.h"
 
 AssetManager::AssetManager(){
-
-    
 }
 
 void AssetManager::ClearData(){

@@ -24,15 +24,15 @@ public:
 
 
     void SetLabelText(std::string text, std::string fontFamily) {
-        SDL_Surface* surface = TTF_RenderText_Blended(Game::assetManager->GetFont(fontFamily), text.c_str(), color);
-        texture = SDL_CreateTextureFromSurface(Game::renderer, surface);
+        SDL_Surface* surface = TTF_RenderText_Blended(Game::getInstance()->assetManager->GetFont(fontFamily), text.c_str(), color);
+        texture = SDL_CreateTextureFromSurface(Game::getInstance()->renderer, surface);
         SDL_FreeSurface(surface);
         SDL_QueryTexture(texture, NULL, NULL, &position.w, &position.h);
     }
 
 
 
-    void Render() override {
+    void Render(float offsetX,float offsetY) override {
         FontManager::Draw(texture, position);
     }
 };

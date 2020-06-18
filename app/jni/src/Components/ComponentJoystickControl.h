@@ -52,8 +52,8 @@ public:
 		std::string assetSlideAreaTextureID,int slideAreaX,int slideAreaY,int slideAreaWidth,int slideAreaHeight) {
 
 
-		slidingAreaTexture = Game::assetManager->GetTexture(assetSlideAreaTextureID);
-		buttonTexture = Game::assetManager->GetTexture(assetButtonTextureID);
+		slidingAreaTexture = Game::getInstance()->assetManager->GetTexture(assetSlideAreaTextureID);
+		buttonTexture = Game::getInstance()->assetManager->GetTexture(assetButtonTextureID);
 
 		//SourceRect读取参数设定，目前固定，只应输入128x128的滑动区域贴图和64x64的button贴图
 
@@ -88,7 +88,8 @@ public:
 	}
 
 	//初始化
-	void Initialize() override {	
+	void Initialize() override {
+
 	}
 
 
@@ -96,26 +97,26 @@ public:
 	//根据输入状态得到输入结果，并改变轮盘的显示
 	void Update(float deltaTime) override {
 
-		SDL_Event input_event = Game::event;
+		SDL_Event input_event = Game::getInstance()->event;
 
-		switch(Game::event.type){
+		switch(input_event.type){
 
 			case SDL_FINGERDOWN:{
 
-				SDL_Finger finger;
-				finger.x = input_event.motion.x;
-				finger.y = input_event.motion.y;
-				//finger.x = input_event.tfinger.x * (float)WINDOW_WIDTH;
-				//finger.y = input_event.tfinger.y * (float)WINDOW_HEIGHT;
+                //SDL_Finger finger;
+                glm::vec2 touch_pos;
 
-				auto distance = std::sqrt(std::pow(finger.x - slide_area_center.x, 2) + std::pow(finger.y - slide_area_center.y, 2));
+                touch_pos.x = input_event.tfinger.x * (float)WINDOW_WIDTH;
+                touch_pos.y = input_event.tfinger.y * (float)WINDOW_HEIGHT;
+
+                auto distance = std::sqrt(std::pow(touch_pos.x - slide_area_center.x, 2) + std::pow(touch_pos.y - slide_area_center.y, 2));
 
 				if (m_fingerId == -1 && distance <= slidingAreaDestRect.w / 2) {
 
 					m_fingerId = input_event.tfinger.fingerId;
 					isValidTouch = true;
-					buttonDestRect.x = finger.x - buttonDestRect.w / 2;
-					buttonDestRect.y = finger.y - buttonDestRect.h / 2;
+					buttonDestRect.x = touch_pos.x - buttonDestRect.w / 2;
+					buttonDestRect.y = touch_pos.y - buttonDestRect.h / 2;
 
 				}
 
@@ -124,7 +125,7 @@ public:
 			}
 
 			case SDL_FINGERUP:{
-				SDL_FingerID id = Game::event.tfinger.fingerId;
+				SDL_FingerID id = Game::getInstance()->event.tfinger.fingerId;
 
 				if (m_fingerId == id){
 					isValidTouch = false;
@@ -134,6 +135,7 @@ public:
 					buttonDestRect.y = slide_area_center.y - buttonDestRect.h / 2;
 
 					m_fingerId = -1;
+
 					ToDoOnJoystickInvalid();
 
 				}
@@ -142,20 +144,21 @@ public:
 
 
 			case SDL_FINGERMOTION:{
-				SDL_FingerID id = Game::event.tfinger.fingerId;
+				SDL_FingerID id = Game::getInstance()->event.tfinger.fingerId;
 
 				// 如果为有效id
 				if (id == m_fingerId&&isValidTouch)
 				{
-						SDL_Finger finger;
-						finger.x = input_event.motion.x;
-						finger.y = input_event.motion.y;
-						//finger.x = input_event.tfinger.x * (float)WINDOW_WIDTH;
-						//finger.y = input_event.tfinger.y * (float)WINDOW_HEIGHT;
+						//SDL_Finger finger;
 
-						auto distance = std::sqrt(std::pow(finger.x - slide_area_center.x, 2) + std::pow(finger.y - slide_area_center.y, 2));
+						glm::vec2 touch_pos;
 
-						glm::vec2 dir(finger.x - slide_area_center.x, finger.y - slide_area_center.y);
+                    touch_pos.x = input_event.tfinger.x * static_cast<float>(WINDOW_WIDTH);
+                    touch_pos.y = input_event.tfinger.y * static_cast<float>(WINDOW_HEIGHT);
+
+						auto distance = std::sqrt(std::pow(touch_pos.x - slide_area_center.x, 2) + std::pow(touch_pos.y - slide_area_center.y, 2));
+
+						glm::vec2 dir(touch_pos.x - slide_area_center.x, touch_pos.y - slide_area_center.y);
 
 						glm::vec2 normalizedDir = glm::normalize(dir);
 
@@ -165,8 +168,8 @@ public:
 
 						if (distance <= slidingAreaDestRect.w / 2)	//如果位置位于滑动区域之内，按钮位置即为触摸位置
 						{
-							buttonDestRect.x = finger.x - buttonDestRect.w / 2;
-							buttonDestRect.y = finger.y - buttonDestRect.h / 2;
+							buttonDestRect.x = touch_pos.x - buttonDestRect.w / 2;
+							buttonDestRect.y = touch_pos.y - buttonDestRect.h / 2;
 						}
 						else {															//如果位置位于滑动区域之外，按钮位置为朝向触摸位置的滑动区域边界位置
 
@@ -264,7 +267,7 @@ public:
 
 	}
 
-	void Render() override {
+	void Render(float offsetX,float offsetY) override {
 
 		//根据位置渲染滑动区域
 		TextureManager::DrawTexture(slidingAreaTexture, slidingAreaSourceRect, slidingAreaDestRect, SDL_FLIP_NONE);

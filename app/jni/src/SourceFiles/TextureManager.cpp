@@ -1,4 +1,5 @@
 #include"../HeaderFiles/TextureManager.h"
+#include "../HeaderFiles/Game.h"
 
 /*
  * Texture加载控制
@@ -11,7 +12,7 @@
 SDL_Texture* TextureManager::LoadTexture(const char* filePath){
     SDL_Surface* surface = IMG_Load(filePath);
 
-    SDL_Texture* texture = SDL_CreateTextureFromSurface(Game::renderer,surface);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(Game::getInstance()->renderer,surface);
     SDL_FreeSurface(surface);
     return texture;
 
@@ -20,6 +21,6 @@ SDL_Texture* TextureManager::LoadTexture(const char* filePath){
 
 //绘制Texture
 void TextureManager::DrawTexture(SDL_Texture* texture,SDL_Rect sourceRect,SDL_Rect destRect,SDL_RendererFlip flip){
-    SDL_RenderCopyEx(Game::renderer,texture,&sourceRect,&destRect,0.0,NULL,flip);
+    SDL_RenderCopyEx(Game::getInstance()->renderer,texture,&sourceRect,&destRect,0.0,NULL,flip);
 
 }

@@ -7,9 +7,6 @@
  * TileMap类
  * */
 
-
-extern EntityManager manager;
-
 TerrainMap::TerrainMap(std::string textureID, int scale, int tileSize) {
 	this->scale = scale;
 	this->textureID = textureID;
@@ -22,7 +19,7 @@ TerrainMap::~TerrainMap() {
 
 
 //从Map文本文件中加载地图信息，根据地图排布生成Tilemap
-void TerrainMap::LoadMapCSV(std::string filePath, int mapSizeX, int mapSizeY) {
+void TerrainMap::LoadTilemap(std::string filePath, int mapSizeX, int mapSizeY) {
 
 	//SDL文件加载方法
 	SDL_RWops *io = SDL_RWFromFile(filePath.c_str(), "r");
@@ -51,7 +48,7 @@ void TerrainMap::LoadMapCSV(std::string filePath, int mapSizeX, int mapSizeY) {
 
 //生成单个Tile实体
 void TerrainMap::AddTile(int sourceX, int sourceY, int x, int y) {
-	Entity& tileEntity(manager.AddEntity("Tile",LAYER_TILEMAP));
+	Entity& tileEntity(Game::getInstance()->entityManager->AddEntity("Tile",LAYER_TILEMAP));
 	tileEntity.AddComponent<ComponentTransform>(x,y,0,0,tileSize*scale,tileSize*scale,1);
 	tileEntity.AddComponent<ComponentTile>(sourceX, sourceY, x, y,tileSize, scale, textureID);
 

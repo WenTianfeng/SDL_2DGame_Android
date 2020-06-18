@@ -24,10 +24,10 @@ void Entity::Update(float deltaTime){
 
 }
 
-void Entity::Render(){
+void Entity::Render(float offsetX,float offsetY){
    for (auto& component:components)
     {
-        component->Render();
+        component->Render(offsetX,offsetY);
     }
 
 

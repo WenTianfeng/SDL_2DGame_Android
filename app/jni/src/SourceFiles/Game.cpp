@@ -1,27 +1,31 @@
-
 #include "../HeaderFiles/Game.h"
 #include"../Components/ComponentTransform.h"
 #include"../Components/ComponentSprite.h"
-#include"../Components/ComponentKeyboardControl.h"
 #include"../Components/ComponentCollider.h"
 #include"../Components/ComponentTextLabel.h"
 #include"../Components/ComponentProjectileLauncher.h"
 #include"../Components/ComponentJoystickControl.h"
+#include"../Components/ComponentCamera.h"
 
 
 
+Game* Game::Instance = nullptr;
 
+Game* Game::getInstance() {
 
+    if(Instance==nullptr){
 
-//For Test
-EntityManager manager;
-AssetManager* Game::assetManager = new AssetManager();
-SDL_Renderer* Game::renderer;
-SDL_Event Game::event;
-SDL_Rect Game::camera = { 0,0,WINDOW_WIDTH,WINDOW_HEIGHT };
+        Instance = new Game();
+    }
+    return Instance;
+
+}
 
 //构造函数
 Game::Game(){
+    entityManager = new EntityManager();
+    assetManager = new AssetManager();
+
     this->isRunning = false;
 
 }
@@ -30,11 +34,11 @@ Game::Game(){
 Game::~Game(){
 
 
-
 }
 
 //初始化
 void Game::Initialize(int width,int height){
+
     if(SDL_Init(SDL_INIT_EVERYTHING)!=0){
         std::cerr<<"Failed to initialize SDL"<<std::endl;
         return;
@@ -58,8 +62,6 @@ void Game::Initialize(int width,int height){
         return;
     }
 
-
-
     renderer = SDL_CreateRenderer(window,-1,0);
 
     if(!renderer){
@@ -77,15 +79,12 @@ void Game::Initialize(int width,int height){
 
 }
 
-Entity& chopper_entity(manager.AddEntity("chopper", LAYER_PLAYER));
-Entity& labelLevelName(manager.AddEntity("LabelLevelName", LAYER_UI));
 
 
+Entity& labelLevelName(Game::getInstance()->entityManager->AddEntity("LabelLevelName", LAYER_UI));
 //游戏初始化时加载关卡
 void Game::LoadLevel(int level){
     /*资源加载：贴图，字体，地形CSV文件*/
-
-
 
     //加载贴图
     assetManager->AddTexture("image-tank",std::string("images/tank-big-right.png").c_str());
@@ -101,36 +100,41 @@ void Game::LoadLevel(int level){
 
     //地形
     TerrainMap terrainMap("jungle-tilemap", 4, 32);
-    terrainMap.LoadMapCSV("tilemaps/jungle.txt", 25, 20);
+    terrainMap.LoadTilemap("tilemaps/jungle.txt", 25, 20);
 
-
-
-    
+//============================================================================================
     //玩家直升机对象
+    Entity& chopper_entity(entityManager->AddEntity("chopper", LAYER_PLAYER));
     chopper_entity.AddComponent<ComponentTransform>(500, 600, 0, 0, 96, 96, 1);
     chopper_entity.AddComponent<ComponentSprite>("image-chopper",2,30,true,false);
     //chopper_entity.AddComponent<ComponentKeyboardControl>("up", "right", "down", "left", "space");
     chopper_entity.AddComponent<ComponentCollider>("PLAYER", 0, 100, 32, 32);
     chopper_entity.AddComponent<ComponentProjectileLauncher>("image-projectile");
-
+//============================================================================================
+    //相机初始化
+    Entity& mainCamera_entity(entityManager->AddEntity("main-camera",LAYER_PLAYER));
+    mainCamera_entity.AddComponent<ComponentCamera>(&chopper_entity,WINDOW_WIDTH,WINDOW_HEIGHT,3200,2560,0,0);
+    //设定主相机
+    this->mainCamera = &mainCamera_entity;
+//============================================================================================
     //坦克对象
-    Entity& tank_entity(manager.AddEntity("tank",LAYER_ENEMY));
+    Entity& tank_entity(entityManager->AddEntity("tank",LAYER_ENEMY));
     tank_entity.AddComponent<ComponentTransform>(100,100,0,0,64,64,1);
     tank_entity.AddComponent<ComponentSprite>("image-tank");
     tank_entity.AddComponent<ComponentCollider>("ENEMY", 100, 100, 32, 32);
-
+//============================================================================================
     //停机坪对象
-    Entity& heliport(manager.AddEntity("heliport", LAYER_OBSTACLE));
+    Entity& heliport(entityManager->AddEntity("heliport", LAYER_OBSTACLE));
     heliport.AddComponent<ComponentTransform>(470, 420, 0, 0, 64, 64, 1);
     heliport.AddComponent<ComponentSprite>("image-heliport");
     heliport.AddComponent<ComponentCollider>("LEVEL_COMPLETE", 470, 420, 32, 32);
-
+//============================================================================================
     //轮盘对象
     //左侧控制轮盘
-    Entity& joystick_control_entity(manager.AddEntity("joystick-control", LAYER_UI));
+    Entity& joystick_control_entity(entityManager->AddEntity("joystick-control", LAYER_UI));
     joystick_control_entity.AddComponent<ComponentJoystickControl>("image-button", 128,128,"image-slide-area",50,750,256,256);
     //右侧攻击轮盘
-    Entity& joystick_attack_entity(manager.AddEntity("joystick-attack", LAYER_UI));
+    Entity& joystick_attack_entity(entityManager->AddEntity("joystick-attack", LAYER_UI));
     joystick_attack_entity.AddComponent<ComponentJoystickControl>("image-button",128,128, "image-slide-area",1800,750,256,256);
 
     //为每个轮盘添加可以控制的组件
@@ -140,8 +144,9 @@ void Game::LoadLevel(int level){
     //右侧轮盘控制Projectile发射器
     joystick_attack_entity.GetComponent<ComponentJoystickControl>()->AttachControlledThing(chopper_entity.GetComponent<ComponentProjectileLauncher>());
 
-
+//============================================================================================
     //左上角Label
+    //Entity& labelLevelName(entityManager->AddEntity("LabelLevelName", LAYER_UI));
     labelLevelName.AddComponent<ComponentTextLabel>(10, 10, "First Level...", "font-charriot", SDL_Color{ 255,255,255,255 });
 
 }
@@ -184,17 +189,14 @@ void Game::Update(){
 
     ticksLastFrame = SDL_GetTicks();
 
-    manager.Update(delta_time);
+    entityManager->Update(delta_time);
 
-    //测试用——目前显示直升机位置
-    std::string pos = "X : "+ std::to_string((int)chopper_entity.GetComponent<ComponentTransform>()->position.x) +"  Y : "+std::to_string((int)chopper_entity.GetComponent<ComponentTransform>()->position.y);
-    labelLevelName.GetComponent<ComponentTextLabel>()->SetLabelText(pos,"font-charriot");
-
-
-
-    //CameraControl();
     //碰撞检测
     CheckCollisions();
+
+    //测试用——显示相机位置
+    std::string pos = "X : "+ std::to_string((int)this->mainCamera->GetComponent<ComponentCamera>()->visibleRect.x) +"  Y : "+std::to_string((int)this->mainCamera->GetComponent<ComponentCamera>()->visibleRect.y);
+    labelLevelName.GetComponent<ComponentTextLabel>()->SetLabelText(pos,"font-charriot");
 
 }
 
@@ -204,29 +206,14 @@ void Game::Render(){
     SDL_SetRenderDrawColor(renderer,0,0,0,255);
     SDL_RenderClear(renderer);  
 
-    if(manager.GetEntityCount()>0){
-        manager.Render();
+    if(entityManager->GetEntityCount()>0){
+        entityManager->Render(this->mainCamera->GetComponent<ComponentCamera>()->visibleRect.x,this->mainCamera->GetComponent<ComponentCamera>()->visibleRect.y);
     }
 
     SDL_RenderPresent(renderer);
 
 }
 
-
-//  相机控制.
-void Game::CameraControl() {
-    ComponentTransform* playerTransform = chopper_entity.GetComponent<ComponentTransform>();
-
-    camera.x = playerTransform->position.x - (WINDOW_WIDTH / 2);
-    camera.y = playerTransform->position.y - (WINDOW_HEIGHT / 2);
-    camera.x = camera.x < 0 ? 0 : camera.x;
-    camera.y = camera.y < 0 ? 0 : camera.y;
-    //camera.x = camera.x > camera.w ? camera.w : camera.x;
-    //camera.y = camera.y > camera.h ? camera.h : camera.y;
-
-
-
-}
 
 void Game::Destroy(){
     SDL_DestroyRenderer(renderer);
@@ -236,7 +223,7 @@ void Game::Destroy(){
 
 
 void Game::CheckCollisions() {
-    CollisionType collisionType = manager.CheckCollisions();
+    CollisionType collisionType = entityManager->CheckCollisions();
     if (collisionType == PLAYER_ENEMY_COLLISION) {
         ProcessGameOver();
     }

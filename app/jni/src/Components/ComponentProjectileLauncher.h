@@ -7,7 +7,6 @@
 #include"ComponentTransform.h"
 #include"ComponentProjectile.h"
 
-extern EntityManager manager;
 /*
 弹丸发射器组件
 继承自组件基类和轮盘可控接口
@@ -26,7 +25,7 @@ public:
 
 	ComponentProjectileLauncher(std::string assetProjectileTextureID) {
 
-		projectileTexture = Game::assetManager->GetTexture(assetProjectileTextureID);//设置弹丸贴图
+		projectileTexture = Game::getInstance()->assetManager->GetTexture(assetProjectileTextureID);//设置弹丸贴图
 		attackRate = 2;
 	}
 
@@ -54,17 +53,8 @@ public:
                 }
             }
         }
-
-
-
-
     }
 
-
-
-	void Render() override {
-	}
-	
 	//发射弹丸方法
 	void EmitProjectiles(glm::vec2 emissionOrigin, glm::vec2 emissionDir) {
 
@@ -72,7 +62,7 @@ public:
 
 		if ((newTicks - preTicks) >= 1000/ attackRate) {//控制发射间隔
 
-			Entity& projectile_entity(manager.AddEntity("projectile",LAYER_PROJECTILE));
+			Entity& projectile_entity(Game::getInstance()->entityManager->AddEntity("projectile",LAYER_PROJECTILE));
 			projectile_entity.AddComponent<ComponentTransform>(emissionOrigin.x,emissionOrigin.y,0,0,8,8,1);
 			projectile_entity.AddComponent<ComponentProjectile>(projectileTexture,emissionOrigin,emissionDir,16,16);
 			projectiles.push_back(&projectile_entity);

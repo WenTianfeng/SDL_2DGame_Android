@@ -28,7 +28,7 @@ class Entity{
         Entity(EntityManager& manager,std::string name,LayerType layer);
 
         void Update(float deltaTime);
-        void Render();
+        void Render(float offsetX,float offsetY);
         void Destroy();
         bool IsActive() const;
         void SetActive(bool);

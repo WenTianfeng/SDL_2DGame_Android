@@ -86,7 +86,7 @@ class ComponentSprite:public Component,public IControlledByJoystick{
         }
 
         void SetTexture(std::string assetTextureID){
-            texture = Game::assetManager->GetTexture(assetTextureID);
+            texture = Game::getInstance()->assetManager->GetTexture(assetTextureID);
      
         }
 
@@ -120,8 +120,9 @@ class ComponentSprite:public Component,public IControlledByJoystick{
           
         }
 
-        void Render() override {
-            TextureManager::DrawTexture(texture,sourceRect,destRect,spriteFlip);
+        void Render(float offsetX,float offsetY) override {
+            SDL_Rect offsetRect={static_cast<int>(destRect.x-offsetX),static_cast<int>(destRect.y-offsetY),destRect.w,destRect.h};
+            TextureManager::DrawTexture(texture,sourceRect,offsetRect,spriteFlip);
   
         }
 

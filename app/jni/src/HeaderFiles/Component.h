@@ -13,7 +13,7 @@ class Component{
         virtual ~Component(){}
         virtual void Initialize(){}
         virtual void Update(float deltaTime){}
-        virtual void Render(){}
+        virtual void Render(float offsetX,float offsetY){}
 };
 
 #endif

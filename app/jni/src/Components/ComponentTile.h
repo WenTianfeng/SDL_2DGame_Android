@@ -15,7 +15,7 @@ public:
     ComponentTransform* transform;
 
     ComponentTile(int sourceRectX, int sourceRectY, int x, int y, int tileSize, int tileScale, std::string assetTextureId) {
-        texture = Game::assetManager->GetTexture(assetTextureId);
+        texture = Game::getInstance()->assetManager->GetTexture(assetTextureId);
         
 
         sourceRect.x = sourceRectX;
@@ -48,8 +48,9 @@ public:
         destRect.h = transform->height * transform->scale;
     }
 
-    void Render() override {
-        TextureManager::DrawTexture(texture, sourceRect, destRect, SDL_FLIP_NONE);
+    void Render(float offsetX,float offsetY) override {
+        SDL_Rect offsetRect={static_cast<int>(destRect.x-offsetX),static_cast<int>(destRect.y-offsetY),destRect.w,destRect.h};
+        TextureManager::DrawTexture(texture, sourceRect, offsetRect, SDL_FLIP_NONE);
     }
 
 
