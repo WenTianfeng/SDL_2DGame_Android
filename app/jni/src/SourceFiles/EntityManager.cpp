@@ -67,6 +67,7 @@ int EntityManager::GetEntityCount(){
 
 
 
+//碰撞检测
 CollisionType EntityManager::CheckCollisions() const {
     for (int i = 0; i < entities.size() - 1; i++) {
         auto& thisEntity = entities[i];

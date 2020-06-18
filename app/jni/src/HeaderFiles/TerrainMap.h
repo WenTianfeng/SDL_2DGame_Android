@@ -1,5 +1,5 @@
-#ifndef TERRAIN_MAP
-#define TERRAIN_MAP
+#ifndef TERRAIN_MAP_H
+#define TERRAIN_MAP_H
 
 #include<string>
 
@@ -20,5 +20,5 @@ class TerrainMap {
 };
 
 
-#endif // !TERRAIN_MAP
+#endif // !TERRAIN_MAP_H
 

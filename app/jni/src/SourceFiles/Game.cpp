@@ -80,6 +80,8 @@ void Game::Initialize(int width,int height){
 Entity& chopper_entity(manager.AddEntity("chopper", LAYER_PLAYER));
 Entity& labelLevelName(manager.AddEntity("LabelLevelName", LAYER_UI));
 
+
+//游戏初始化时加载关卡
 void Game::LoadLevel(int level){
     /*资源加载：贴图，字体，地形CSV文件*/
 
@@ -140,7 +142,6 @@ void Game::LoadLevel(int level){
 
 
     //左上角Label
-
     labelLevelName.AddComponent<ComponentTextLabel>(10, 10, "First Level...", "font-charriot", SDL_Color{ 255,255,255,255 });
 
 }
@@ -184,13 +185,17 @@ void Game::Update(){
     ticksLastFrame = SDL_GetTicks();
 
     manager.Update(delta_time);
+
+    //测试用——目前显示直升机位置
     std::string pos = "X : "+ std::to_string((int)chopper_entity.GetComponent<ComponentTransform>()->position.x) +"  Y : "+std::to_string((int)chopper_entity.GetComponent<ComponentTransform>()->position.y);
-
-
     labelLevelName.GetComponent<ComponentTextLabel>()->SetLabelText(pos,"font-charriot");
 
-    CameraControl();
+
+
+    //CameraControl();
+    //碰撞检测
     CheckCollisions();
+
 }
 
 
@@ -199,13 +204,10 @@ void Game::Render(){
     SDL_SetRenderDrawColor(renderer,0,0,0,255);
     SDL_RenderClear(renderer);  
 
-    if(manager.GetEntityCount()==0){
-        return;
+    if(manager.GetEntityCount()>0){
+        manager.Render();
     }
 
-
-    manager.Render();
-    
     SDL_RenderPresent(renderer);
 
 }

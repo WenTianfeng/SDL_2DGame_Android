@@ -6,15 +6,19 @@
 #include"Entity.h"
 
 
+/*
+ * 所有实体的管理器
+ * */
+
 class EntityManager{
     private:
         std::vector<Entity*> entities;
     public:
         void Update(float deltaTime);
         void Render();
-        Entity& AddEntity(std::string entityName,LayerType layer);
-        std::vector<Entity*> GetEntities();
-        std::vector<Entity*> GetEntitiesByLayer(LayerType layer) const;
+        Entity& AddEntity(std::string entityName,LayerType layer);  //添加实体
+        std::vector<Entity*> GetEntities(); //获取所有实体
+        std::vector<Entity*> GetEntitiesByLayer(LayerType layer) const; //根据Layer获取实体
         void ClearEntitiesData();
         int GetEntityCount();
         CollisionType CheckCollisions() const;

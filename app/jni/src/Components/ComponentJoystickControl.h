@@ -91,16 +91,113 @@ public:
 	void Initialize() override {	
 	}
 
+
+
 	//根据输入状态得到输入结果，并改变轮盘的显示
 	void Update(float deltaTime) override {
 
+		SDL_Event input_event = Game::event;
+
+		switch(Game::event.type){
+
+			case SDL_FINGERDOWN:{
+
+				SDL_Finger finger;
+				finger.x = input_event.motion.x;
+				finger.y = input_event.motion.y;
+				//finger.x = input_event.tfinger.x * (float)WINDOW_WIDTH;
+				//finger.y = input_event.tfinger.y * (float)WINDOW_HEIGHT;
+
+				auto distance = std::sqrt(std::pow(finger.x - slide_area_center.x, 2) + std::pow(finger.y - slide_area_center.y, 2));
+
+				if (m_fingerId == -1 && distance <= slidingAreaDestRect.w / 2) {
+
+					m_fingerId = input_event.tfinger.fingerId;
+					isValidTouch = true;
+					buttonDestRect.x = finger.x - buttonDestRect.w / 2;
+					buttonDestRect.y = finger.y - buttonDestRect.h / 2;
+
+				}
+
+				break;
+
+			}
+
+			case SDL_FINGERUP:{
+				SDL_FingerID id = Game::event.tfinger.fingerId;
+
+				if (m_fingerId == id){
+					isValidTouch = false;
+
+					//button回到初始位置
+					buttonDestRect.x = slide_area_center.x - buttonDestRect.w / 2;
+					buttonDestRect.y = slide_area_center.y - buttonDestRect.h / 2;
+
+					m_fingerId = -1;
+					ToDoOnJoystickInvalid();
+
+				}
+				break;
+			}
+
+
+			case SDL_FINGERMOTION:{
+				SDL_FingerID id = Game::event.tfinger.fingerId;
+
+				// 如果为有效id
+				if (id == m_fingerId&&isValidTouch)
+				{
+						SDL_Finger finger;
+						finger.x = input_event.motion.x;
+						finger.y = input_event.motion.y;
+						//finger.x = input_event.tfinger.x * (float)WINDOW_WIDTH;
+						//finger.y = input_event.tfinger.y * (float)WINDOW_HEIGHT;
+
+						auto distance = std::sqrt(std::pow(finger.x - slide_area_center.x, 2) + std::pow(finger.y - slide_area_center.y, 2));
+
+						glm::vec2 dir(finger.x - slide_area_center.x, finger.y - slide_area_center.y);
+
+						glm::vec2 normalizedDir = glm::normalize(dir);
+
+						glm::vec2 aimPos(normalizedDir.x * slidingAreaDestRect.w / 2 + slide_area_center.x, normalizedDir.y * slidingAreaDestRect.w / 2 + slide_area_center.y);
+
+						//如果目前处于触摸阶段，那么按钮向对应方向移动
+
+						if (distance <= slidingAreaDestRect.w / 2)	//如果位置位于滑动区域之内，按钮位置即为触摸位置
+						{
+							buttonDestRect.x = finger.x - buttonDestRect.w / 2;
+							buttonDestRect.y = finger.y - buttonDestRect.h / 2;
+						}
+						else {															//如果位置位于滑动区域之外，按钮位置为朝向触摸位置的滑动区域边界位置
+
+							buttonDestRect.x = aimPos.x - buttonDestRect.w / 2;
+							buttonDestRect.y = aimPos.y - buttonDestRect.h / 2;
+						}
+
+						//改变绑定对象的运动状态
+						UpdateControlledThings(normalizedDir);
+
+
+				}
+
+
+				break;
+			}
+
+
+			default:
+				break;
+
+
+		}
+
+		/*
         glm::vec2 motion_pos(Game::event.tfinger.x*(float)WINDOW_WIDTH, Game::event.tfinger.y*(float)WINDOW_HEIGHT);	//光标移动位置
 
         auto distance = std::sqrt(std::pow(motion_pos.x - slide_area_center.x, 2) + std::pow(motion_pos.y - slide_area_center.y, 2));		//光标和滑动区域距离
 
 		if (Game::event.type == SDL_FINGERDOWN) {
 
-			// 绑定有效id
 			if (m_fingerId == -1) {
 				if (distance <= slidingAreaDestRect.w / 2)
 				{
@@ -163,7 +260,7 @@ public:
 			}
 
 		}
-
+		*/
 
 	}
 

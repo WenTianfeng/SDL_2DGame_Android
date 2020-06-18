@@ -7,12 +7,9 @@ LOCAL_MODULE := main
 SDL_PATH := ../SDL2
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 
-APP_STL := gnustl_static
+#APP_STL := gnustl_static
 #APP_STL := c++_shared
-
-APP_CPPFLAGS += -std=c++11
-
-
+#APP_CPPFLAGS += -std=c++11
 
 # LOCAL_ALLOW_UNDEFINED_SYMBOLS := true
 
@@ -20,7 +17,7 @@ LOCAL_CPPFLAGS += -frtti
 
 
 # Add your application source files here...
-LOCAL_SRC_FILES := main.cpp \
+LOCAL_SRC_FILES :=  SourceFiles/Main.cpp \
                 SourceFiles/Animation.cpp \
                 SourceFiles/Game.cpp \
                 SourceFiles/AssetManager.cpp \

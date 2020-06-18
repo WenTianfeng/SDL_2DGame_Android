@@ -37,6 +37,7 @@ class Game{
         void Update();//更新函数
         void Render();//渲染函数
         void Destroy();//销毁函数
+
         void ProcessNextLevel(int levelNumber);
         void ProcessGameOver();
         void CameraControl();//相机控制

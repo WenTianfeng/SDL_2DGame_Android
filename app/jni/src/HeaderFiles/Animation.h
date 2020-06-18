@@ -8,13 +8,7 @@ class Animation {
 		int animationSpeed;
 		Animation();
 		Animation(int index, int numFrame, int animationSpeed);
-
-
-
-
-
 };
-
 
 
 #endif // !ANIMATION_H

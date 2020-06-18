@@ -6,7 +6,41 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4c31828-a368-4f37-877c-3a637901da4d" name="Default Changelist" comment="" />
+    <list default="true" id="e4c31828-a368-4f37-877c-3a637901da4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJniLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug-mergeJniLibs/merge-state" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Android.mk" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Android.mk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentJoystickControl.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentJoystickControl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentSprite.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentSprite.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentTile.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentTile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Animation.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Animation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/AssetManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/AssetManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Coliision.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Coliision.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Component.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Entity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/EntityManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/EntityManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/TerrainMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/TerrainMap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/Animation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/Animation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/EntityManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/EntityManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/TerrainMap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/TerrainMap.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/TextureManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/TextureManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,10 +75,14 @@
   <component name="FavoritesManager">
     <favorites_list name="android-project" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="OCResolveContextSettings">
     <option name="configuration" value="main | debug | x86" />
   </component>
   <component name="ProjectId" id="1cwXd7OVhyq7WoEhC7dLpO7XaLx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -65,15 +103,15 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AndroidStudioProject\android-project\app\src\main\res\raw" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\AndroidStudioProject\android-project\app\jni\src\SourceFiles" />
       <recent name="D:\AndroidStudioProject\android-project\app\src\main\assets\tilemaps" />
       <recent name="D:\AndroidStudioProject\android-project\app\src\main\res\raw" />
       <recent name="D:\AndroidStudioProject\android-project\app\src\main\assets" />
-      <recent name="D:\AndroidStudioProject\android-project\app\jni\src\SourceFiles" />
       <recent name="D:\AndroidStudioProject\android-project\app\jni\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\AndroidStudioProject\android-project\app\src\main\res\raw" />
     </key>
   </component>
   <component name="RunManager">

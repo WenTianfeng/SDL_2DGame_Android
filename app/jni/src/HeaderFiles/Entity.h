@@ -9,9 +9,11 @@
 #include"Component.h"
 #include"Constants.h"
 
-class EntityManager;
+class EntityManager;//互相引用，前置声明防止错误
 
-
+/*
+ * 实体类
+ * */
 
 class Entity{
     private:
