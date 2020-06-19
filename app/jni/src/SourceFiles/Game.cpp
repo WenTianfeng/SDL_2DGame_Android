@@ -122,6 +122,7 @@ void Game::LoadLevel(int level){
     tank_entity.AddComponent<ComponentTransform>(100,100,0,0,64,64,1);
     tank_entity.AddComponent<ComponentSprite>("image-tank");
     tank_entity.AddComponent<ComponentCollider>("ENEMY", 100, 100, 32, 32);
+
 //============================================================================================
     //停机坪对象
     Entity& heliport(entityManager->AddEntity("heliport", LAYER_OBSTACLE));

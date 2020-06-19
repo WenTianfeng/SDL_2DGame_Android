@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4c31828-a368-4f37-877c-3a637901da4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentCamera.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
@@ -17,34 +16,29 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/DummyEdit.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/DummyEdit.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$4.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$5.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$6.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$6.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$7.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$7.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$SDLCommandHandler.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$SDLCommandHandler.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$ShowTextInputTask.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$ShowTextInputTask.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLClipboardHandler_API11.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLClipboardHandler_API11.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLInputConnection.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLInputConnection.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLMain.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLMain.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLSurface.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLSurface.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentCameraFollow.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentCollider.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentCollider.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentCamera.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentJoystickControl.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentJoystickControl.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentKeyboardControl.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectileLauncher.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectileLauncher.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentSprite.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentSprite.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentTextLabel.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentTextLabel.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentTile.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentTile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentTransform.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentTransform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Entity.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Entity.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/EntityManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/EntityManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/FontManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/FontManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/TerrainMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/TerrainMap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/TextureManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/TextureManager.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/AssetManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/AssetManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/Entity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/Entity.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/EntityManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/EntityManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/FontManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/FontManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/TerrainMap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/TerrainMap.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/TextureManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/TextureManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/libsdl/app/SDLActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/libsdl/app/SDLActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

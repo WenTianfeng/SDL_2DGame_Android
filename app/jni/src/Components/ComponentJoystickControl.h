@@ -103,11 +103,9 @@ public:
 
 			case SDL_FINGERDOWN:{
 
-                //SDL_Finger finger;
                 glm::vec2 touch_pos;
-
-                touch_pos.x = input_event.tfinger.x * (float)WINDOW_WIDTH;
-                touch_pos.y = input_event.tfinger.y * (float)WINDOW_HEIGHT;
+                touch_pos.x = input_event.tfinger.x * static_cast<float>(WINDOW_WIDTH);
+                touch_pos.y = input_event.tfinger.y * static_cast<float>(WINDOW_HEIGHT);
 
                 auto distance = std::sqrt(std::pow(touch_pos.x - slide_area_center.x, 2) + std::pow(touch_pos.y - slide_area_center.y, 2));
 
@@ -149,12 +147,10 @@ public:
 				// 如果为有效id
 				if (id == m_fingerId&&isValidTouch)
 				{
-						//SDL_Finger finger;
 
 						glm::vec2 touch_pos;
-
-                    touch_pos.x = input_event.tfinger.x * static_cast<float>(WINDOW_WIDTH);
-                    touch_pos.y = input_event.tfinger.y * static_cast<float>(WINDOW_HEIGHT);
+                        touch_pos.x = input_event.tfinger.x * static_cast<float>(WINDOW_WIDTH);
+                        touch_pos.y = input_event.tfinger.y * static_cast<float>(WINDOW_HEIGHT);
 
 						auto distance = std::sqrt(std::pow(touch_pos.x - slide_area_center.x, 2) + std::pow(touch_pos.y - slide_area_center.y, 2));
 
@@ -179,93 +175,14 @@ public:
 
 						//改变绑定对象的运动状态
 						UpdateControlledThings(normalizedDir);
-
-
 				}
-
-
 				break;
 			}
-
-
 			default:
 				break;
-
-
 		}
-
-		/*
-        glm::vec2 motion_pos(Game::event.tfinger.x*(float)WINDOW_WIDTH, Game::event.tfinger.y*(float)WINDOW_HEIGHT);	//光标移动位置
-
-        auto distance = std::sqrt(std::pow(motion_pos.x - slide_area_center.x, 2) + std::pow(motion_pos.y - slide_area_center.y, 2));		//光标和滑动区域距离
-
-		if (Game::event.type == SDL_FINGERDOWN) {
-
-			if (m_fingerId == -1) {
-				if (distance <= slidingAreaDestRect.w / 2)
-				{
-					m_fingerId = Game::event.tfinger.fingerId;
-					isValidTouch = true;
-					buttonDestRect.x = motion_pos.x - buttonDestRect.w / 2;
-					buttonDestRect.y = motion_pos.y - buttonDestRect.h / 2;
-				}
-			}
-
-		}
-		if (Game::event.type == SDL_FINGERUP) {
-
-			SDL_FingerID id = Game::event.tfinger.fingerId;
-			// 如果不相等，退出
-			if (m_fingerId == id){
-				isValidTouch = false;
-				//button回到初始位置
-				buttonDestRect.x = slide_area_center.x - buttonDestRect.w / 2;
-				buttonDestRect.y = slide_area_center.y - buttonDestRect.h / 2;
-
-				m_fingerId = -1;
-				ToDoOnJoystickInvalid();
-
-			}
-
-
-
-		}
-		if (Game::event.type == SDL_FINGERMOTION) {
-			SDL_FingerID id = Game::event.tfinger.fingerId;
-
-			// 如果为有效id
-			if (id == m_fingerId)
-			{
-				if (isValidTouch) {
-					glm::vec2 dir(motion_pos.x - slide_area_center.x, motion_pos.y - slide_area_center.y);
-
-					glm::vec2 normalizedDir = glm::normalize(dir);
-
-					glm::vec2 aimPos(normalizedDir.x * slidingAreaDestRect.w / 2 + slide_area_center.x, normalizedDir.y * slidingAreaDestRect.w / 2 + slide_area_center.y);
-
-					//如果目前处于触摸阶段，那么按钮向对应方向移动
-
-					if (distance <= slidingAreaDestRect.w / 2)	//如果位置位于滑动区域之内，按钮位置即为触摸位置
-					{
-						buttonDestRect.x = motion_pos.x - buttonDestRect.w / 2;
-						buttonDestRect.y = motion_pos.y - buttonDestRect.h / 2;
-					}
-					else {															//如果位置位于滑动区域之外，按钮位置为朝向触摸位置的滑动区域边界位置
-
-						buttonDestRect.x = aimPos.x - buttonDestRect.w / 2;
-						buttonDestRect.y = aimPos.y - buttonDestRect.h / 2;
-					}
-
-					//改变绑定对象的运动状态
-					UpdateControlledThings(normalizedDir);
-
-				}
-			}
-
-		}
-		*/
-
 	}
+
 
 	void Render(float offsetX,float offsetY) override {
 
@@ -273,7 +190,6 @@ public:
 		TextureManager::DrawTexture(slidingAreaTexture, slidingAreaSourceRect, slidingAreaDestRect, SDL_FLIP_NONE);
 		//根据位置渲染button
 		TextureManager::DrawTexture(buttonTexture, buttonSourceRect, buttonDestRect, SDL_FLIP_NONE);
-		
 
 	
 	}

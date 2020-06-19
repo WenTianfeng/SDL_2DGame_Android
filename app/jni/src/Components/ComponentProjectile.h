@@ -54,7 +54,8 @@ public:
     }
 
     void Render(float offsetX,float offsetY) override{
-        TextureManager::DrawTexture(projectileTexture, sourceRect, destRect, SDL_FLIP_NONE);
+        SDL_Rect offsetRect={static_cast<int>(destRect.x-offsetX),static_cast<int>(destRect.y-offsetY),destRect.w,destRect.h};
+        TextureManager::DrawTexture(projectileTexture, sourceRect, offsetRect, SDL_FLIP_NONE);
     }
 
 

@@ -59,8 +59,8 @@ public:
     void Update(float deltaTime) override{
 
         if(this->followedEntity!= nullptr){
-            visibleRect.x = this->followedEntity->GetComponent<ComponentTransform>()->position.x-this->visibleRect.w/2;
-            visibleRect.y = this->followedEntity->GetComponent<ComponentTransform>()->position.y-this->visibleRect.h/2;
+            visibleRect.x = this->followedEntity->GetComponent<ComponentTransform>()->position.x-this->visibleRect.w/2+this->followedEntity->GetComponent<ComponentTransform>()->width/2;
+            visibleRect.y = this->followedEntity->GetComponent<ComponentTransform>()->position.y-this->visibleRect.h/2+this->followedEntity->GetComponent<ComponentTransform>()->height/2;
             visibleRect.x = visibleRect.x < rangeRect.x ? rangeRect.x : visibleRect.x;
             visibleRect.y = visibleRect.y < rangeRect.y ? rangeRect.y : visibleRect.y;
             visibleRect.x = visibleRect.x > rangeRect.x+rangeRect.w-visibleRect.w ? rangeRect.x+rangeRect.w-visibleRect.w : visibleRect.x;
