@@ -10,7 +10,10 @@
 目录结构：
 
  app/jni/scr/Components —— 组件脚本
+
  app/jni/scr/HeaderFiles —— 头文件
+
  app/jni/scr/SourceFiles —— 源文件
+
  app/src/main/assets —— 资源文件（图片、字体、文本、音频）
  
