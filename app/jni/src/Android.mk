@@ -15,7 +15,6 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 
 LOCAL_CPPFLAGS += -frtti
 
-
 # Add your application source files here...
 LOCAL_SRC_FILES :=  SourceFiles/Main.cpp \
                 SourceFiles/Animation.cpp \

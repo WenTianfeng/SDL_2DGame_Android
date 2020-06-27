@@ -24,9 +24,14 @@ enum LayerType {
 	LAYER_PLAYER = 4,
 	LAYER_PROJECTILE = 5,
 	LAYER_UI = 6
+};
+
+enum Tag{
+
 
 
 };
+
 
 //碰撞类型，用于碰撞检测判断（之后应该修改）
 enum CollisionType {

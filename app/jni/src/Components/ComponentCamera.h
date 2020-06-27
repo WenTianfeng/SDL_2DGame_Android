@@ -9,9 +9,6 @@ class ComponentCamera: public Component{
 private:
     Entity* followedEntity;
     //ComponentTransform* transform;
-
-
-
 public:
     SDL_Rect visibleRect;
     SDL_Rect rangeRect;
@@ -29,8 +26,6 @@ public:
         this->rangeRect.h = rangeHeight;
         this->rangeRect.x = rangeX;
         this->rangeRect.y = rangeY;
-
-
     }
     //无跟随构造方法
     ComponentCamera(int width, int height, int rangeWidth, int rangeHeight, int rangeX, int rangeY){
@@ -45,8 +40,6 @@ public:
         this->rangeRect.h = rangeHeight;
         this->rangeRect.x = rangeX;
         this->rangeRect.y = rangeY;
-
-
     }
 
 

@@ -7,38 +7,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4c31828-a368-4f37-877c-3a637901da4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentAI.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentBattleAttributes.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Interfaces.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/arm64-v8a/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/arm64-v8a/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/armeabi-v7a/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/armeabi-v7a/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86_64/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86_64/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/debug/x86_64/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/arm64-v8a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/arm64-v8a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/arm64-v8a/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/arm64-v8a/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/armeabi-v7a/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/armeabi-v7a/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/armeabi-v7a/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/armeabi-v7a/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86_64/android_gradle_build.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86_64/android_gradle_build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86_64/ndkBuild_build_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/ndkBuild/release/x86_64/ndkBuild_build_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/DummyEdit.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/DummyEdit.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$2.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$3.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$4.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$5.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$6.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$6.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$7.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$7.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$SDLCommandHandler.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$SDLCommandHandler.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$ShowTextInputTask.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity$ShowTextInputTask.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLClipboardHandler_API11.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLClipboardHandler_API11.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLInputConnection.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLInputConnection.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLMain.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLMain.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLSurface.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/0/org/libsdl/app/SDLSurface.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out/images/button.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out/images/button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out/images/slide-area.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_assets/debug/mergeDebugAssets/out/images/slide-area.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Android.mk" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Android.mk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentCamera.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentJoystickControl.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentJoystickControl.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectile.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectileLauncher.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentProjectileLauncher.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentSprite.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentSprite.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentTextLabel.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentTextLabel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/Components/ComponentTransform.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/Components/ComponentTransform.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/HeaderFiles/Constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/EntityManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/EntityManager.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/jni/src/SourceFiles/TextureManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/app/jni/src/SourceFiles/TextureManager.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/org/libsdl/app/SDLActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/org/libsdl/app/SDLActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/images/button.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/images/button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/images/slide-area.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/images/slide-area.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,15 +105,15 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_6P_API_23" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-11T06:47:49.726Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="d4a1cc7a" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-19T15:47:12.055Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="D:/AndroidSDK" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/raw" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="PsdUISettings">
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
@@ -195,10 +212,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="477" y="256" key="#PSD/0.0.1920.1050@0.0.1920.1050" timestamp="1591864329262" />
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591864389219">
+    <state x="414" y="179" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592577837471">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591864389219" />
+    <state x="414" y="179" width="1092" height="717" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1592577837471" />
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592486767759">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -211,26 +228,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1591440866020" />
-    <state width="938" height="284" key="GridCell.Tab.0.bottom" timestamp="1592117727269">
+    <state width="938" height="50" key="GridCell.Tab.0.bottom" timestamp="1593172725865">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1592117727269" />
-    <state width="938" height="284" key="GridCell.Tab.0.center" timestamp="1592117727269">
+    <state width="938" height="50" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1593172725865" />
+    <state width="938" height="50" key="GridCell.Tab.0.center" timestamp="1593172725865">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="284" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1592117727269" />
-    <state width="938" height="284" key="GridCell.Tab.0.left" timestamp="1592117727269">
+    <state width="938" height="50" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1593172725865" />
+    <state width="938" height="50" key="GridCell.Tab.0.left" timestamp="1593172725865">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="284" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1592117727269" />
-    <state width="938" height="284" key="GridCell.Tab.0.right" timestamp="1592117727269">
+    <state width="938" height="50" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1593172725865" />
+    <state width="938" height="50" key="GridCell.Tab.0.right" timestamp="1593172725865">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="938" height="284" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1592117727269" />
-    <state x="616" y="131" key="SettingsEditor" timestamp="1592032090231">
+    <state width="938" height="50" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1593172725865" />
+    <state x="779" y="133" key="SettingsEditor" timestamp="1592626702282">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="131" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1592032090231" />
+    <state x="779" y="133" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1592626702282" />
     <state x="92" y="92" width="1736" height="866" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1591950655859">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -243,5 +260,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="792" y="335" width="716" height="308" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1591947088813" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1593179716373">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1593179716373" />
   </component>
 </project>

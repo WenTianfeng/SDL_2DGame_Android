@@ -5,6 +5,8 @@
 #include"../Components/ComponentTextLabel.h"
 #include"../Components/ComponentProjectileLauncher.h"
 #include"../Components/ComponentJoystickControl.h"
+#include "../Components/ComponentAI.h"
+#include "../Components//ComponentBattleAttributes.h"
 #include"../Components/ComponentCamera.h"
 
 
@@ -81,7 +83,7 @@ void Game::Initialize(int width,int height){
 
 
 
-Entity& labelLevelName(Game::getInstance()->entityManager->AddEntity("LabelLevelName", LAYER_UI));
+
 //游戏初始化时加载关卡
 void Game::LoadLevel(int level){
     /*资源加载：贴图，字体，地形CSV文件*/
@@ -105,11 +107,12 @@ void Game::LoadLevel(int level){
 //============================================================================================
     //玩家直升机对象
     Entity& chopper_entity(entityManager->AddEntity("chopper", LAYER_PLAYER));
+    chopper_entity.AddComponent<ComponentBattleAttributes>(1,10,0);
     chopper_entity.AddComponent<ComponentTransform>(500, 600, 0, 0, 96, 96, 1);
     chopper_entity.AddComponent<ComponentSprite>("image-chopper",2,30,true,false);
-    //chopper_entity.AddComponent<ComponentKeyboardControl>("up", "right", "down", "left", "space");
     chopper_entity.AddComponent<ComponentCollider>("PLAYER", 0, 100, 32, 32);
-    chopper_entity.AddComponent<ComponentProjectileLauncher>("image-projectile");
+    chopper_entity.AddComponent<ComponentProjectileLauncher>("image-projectile",10,"FRIENDLY_PROJECTILE");
+
 //============================================================================================
     //相机初始化
     Entity& mainCamera_entity(entityManager->AddEntity("main-camera",LAYER_PLAYER));
@@ -122,6 +125,10 @@ void Game::LoadLevel(int level){
     tank_entity.AddComponent<ComponentTransform>(100,100,0,0,64,64,1);
     tank_entity.AddComponent<ComponentSprite>("image-tank");
     tank_entity.AddComponent<ComponentCollider>("ENEMY", 100, 100, 32, 32);
+    tank_entity.AddComponent<ComponentProjectileLauncher>("image-projectile",10,"PROJECTILE");
+    tank_entity.AddComponent<ComponentAI>(&chopper_entity,800);
+
+    tank_entity.GetComponent<ComponentAI>()->AttachControlledThing(tank_entity.GetComponent<ComponentProjectileLauncher>());
 
 //============================================================================================
     //停机坪对象
@@ -133,10 +140,10 @@ void Game::LoadLevel(int level){
     //轮盘对象
     //左侧控制轮盘
     Entity& joystick_control_entity(entityManager->AddEntity("joystick-control", LAYER_UI));
-    joystick_control_entity.AddComponent<ComponentJoystickControl>("image-button", 128,128,"image-slide-area",50,750,256,256);
+    joystick_control_entity.AddComponent<ComponentJoystickControl>("image-button", 128,128,"image-slide-area",80,750,256,256);
     //右侧攻击轮盘
     Entity& joystick_attack_entity(entityManager->AddEntity("joystick-attack", LAYER_UI));
-    joystick_attack_entity.AddComponent<ComponentJoystickControl>("image-button",128,128, "image-slide-area",1800,750,256,256);
+    joystick_attack_entity.AddComponent<ComponentJoystickControl>("image-button",128,128, "image-slide-area",1940,750,256,256);
 
     //为每个轮盘添加可以控制的组件
     //左侧轮盘控制Transform和Sprite
@@ -147,8 +154,11 @@ void Game::LoadLevel(int level){
 
 //============================================================================================
     //左上角Label
-    //Entity& labelLevelName(entityManager->AddEntity("LabelLevelName", LAYER_UI));
-    labelLevelName.AddComponent<ComponentTextLabel>(10, 10, "First Level...", "font-charriot", SDL_Color{ 255,255,255,255 });
+
+    Entity& labelLevelName(Game::getInstance()->entityManager->AddEntity("LabelLevelName", LAYER_UI));
+    labelLevelName.AddComponent<ComponentTextLabel>(10, 10, "LEVEL 1", "font-charriot", SDL_Color{ 255,255,255,255 });
+
+    //labelLevelName.GetComponent<ComponentTextLabel>()->SetLabelText("ssss","font-charriot");
 
 }
 
@@ -195,9 +205,7 @@ void Game::Update(){
     //碰撞检测
     CheckCollisions();
 
-    //测试用——显示相机位置
-    std::string pos = "X : "+ std::to_string((int)this->mainCamera->GetComponent<ComponentCamera>()->visibleRect.x) +"  Y : "+std::to_string((int)this->mainCamera->GetComponent<ComponentCamera>()->visibleRect.y);
-    labelLevelName.GetComponent<ComponentTextLabel>()->SetLabelText(pos,"font-charriot");
+
 
 }
 

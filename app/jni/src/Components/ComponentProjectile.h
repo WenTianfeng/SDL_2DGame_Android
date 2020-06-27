@@ -5,7 +5,6 @@
 #include"../../UtilLib/glm/glm.hpp"
 
 
-
 class ComponentProjectile:public Component{
 private:
 
@@ -15,6 +14,8 @@ private:
 
     glm::vec2 emissionOrigin;
     glm::vec2 emissionDir;
+
+    ComponentTransform* transform;
 
 
 public:
@@ -40,15 +41,16 @@ public:
     }
 
     void Initialize()override{
-
-
+        transform = owner->GetComponent<ComponentTransform>();
+        transform->velocity.x = emissionDir.x*500;
+        transform->velocity.y = emissionDir.y*500;
 
     }
 
     void Update(float deltaTime) override {
         lifeTime += 1;
-        destRect.x += static_cast<int>(emissionDir.x * deltaTime*1000);
-        destRect.y += static_cast<int>(emissionDir.y * deltaTime*1000);
+        destRect.x = static_cast<int>(transform->position.x);
+        destRect.y = static_cast<int>(transform->position.y);
 
 
     }

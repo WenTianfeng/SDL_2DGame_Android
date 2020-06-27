@@ -6,7 +6,7 @@
 #include"ComponentTransform.h"
 #include"../HeaderFiles/AssetManager.h"
 #include"../HeaderFiles/Animation.h"
-#include"../Components/ComponentJoystickControl.h"
+#include "./HeaderFiles/Interfaces.h"
 
 
 /*
@@ -127,7 +127,9 @@ class ComponentSprite:public Component,public IControlledByJoystick{
         }
 
 
-        virtual void UpdateByJoystick(glm::vec2 normalizedDir) {
+    //=================IControlledByJoystick接口实现===================
+
+        void UpdateByJoystick(glm::vec2 normalizedDir) override{
 
             if (glm::abs(normalizedDir.x) > glm::abs(normalizedDir.y)) {
                 if (normalizedDir.x > 0) {
@@ -148,7 +150,7 @@ class ComponentSprite:public Component,public IControlledByJoystick{
 
         }
 
-        virtual void OnJoystickInvalid() {
+        virtual void OnJoystickInvalid() override{
         }
 
 };

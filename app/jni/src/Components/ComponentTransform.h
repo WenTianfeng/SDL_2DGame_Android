@@ -4,7 +4,8 @@
 
 #include"../HeaderFiles/Game.h"
 #include"../../UtilLib/glm/glm.hpp"
-#include"../Components/ComponentJoystickControl.h"
+#include "./HeaderFiles/Interfaces.h"
+
 
 
 
@@ -42,7 +43,7 @@ class ComponentTransform:public Component,public IControlledByJoystick{
 //=================IControlledByJoystick接口实现===================
 
         //实现接口函数：随着轮盘输入得到的向量更改自身移动
-        virtual void UpdateByJoystick(glm::vec2 normalizedDir) {
+        void UpdateByJoystick (glm::vec2 normalizedDir) override {
             glm::vec2 speed(normalizedDir.x * 150, normalizedDir.y * 150);
             this->velocity.y = speed.y;
             this->velocity.x = speed.x;
@@ -51,7 +52,7 @@ class ComponentTransform:public Component,public IControlledByJoystick{
         }
 
         //实现接口函数：当轮盘触摸取消，将自身速度归零
-        virtual void OnJoystickInvalid() {
+        virtual void OnJoystickInvalid() override{
             this->velocity.y = 0;
             this->velocity.x = 0;
         }
