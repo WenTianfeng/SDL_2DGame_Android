@@ -38,13 +38,13 @@ class Game{
 
         bool IsRunning() const;//运行判断
         void Initialize(int width,int height);//初始化
-        void LoadLevel(int level);
         void ProcessInput();//输入控制
         void Update();//更新函数
         void Render();//渲染函数
         void Destroy();//销毁函数
         void CheckCollisions();//碰撞检测
-
+        void LoadMenu();
+        void LoadLevel(int level);
         void ProcessNextLevel(int levelNumber);
         void ProcessGameOver();
 

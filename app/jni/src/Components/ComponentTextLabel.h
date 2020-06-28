@@ -4,6 +4,7 @@
 
 #include "../HeaderFiles/Game.h"
 
+
 class ComponentTextLabel : public Component {
 private:
     SDL_Rect position;
@@ -21,12 +22,11 @@ public:
         this->fontFamily = fontFamily;
         this->color = color;
 
-        SetLabelText(text,fontFamily);
+        SetLabelText(text);
     }
 
 
-
-    void SetLabelText(std::string text, std::string fontFamily) {
+    void SetLabelText(std::string text) {
 
         SDL_Surface* surface = TTF_RenderText_Blended(Game::getInstance()->assetManager->GetFont(fontFamily), text.c_str(), color);
         texture = SDL_CreateTextureFromSurface(Game::getInstance()->renderer, surface);

@@ -42,8 +42,8 @@ public:
 
     void Initialize()override{
         transform = owner->GetComponent<ComponentTransform>();
-        transform->velocity.x = emissionDir.x*500;
-        transform->velocity.y = emissionDir.y*500;
+        transform->velocity.x = emissionDir.x*200;
+        transform->velocity.y = emissionDir.y*200;
 
     }
 

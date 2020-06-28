@@ -84,13 +84,14 @@ CollisionType EntityManager::CheckCollisions() const {
                             return PLAYER_ENEMY_COLLISION;
                         }
                         if (thisCollider->colliderTag.compare("PLAYER") == 0 && thatCollider->colliderTag.compare("PROJECTILE") == 0) {
-                            //thisCollider->owner->SetActive(false);
-                            //thatCollider->owner->SetActive(false);
+
+                            thatCollider->owner->SetActive(false);
                             return PLAYER_PROJECTILE_COLLISION;
                         }
                         if (thisCollider->colliderTag.compare("ENEMY") == 0 && thatCollider->colliderTag.compare("FRIENDLY_PROJECTILE") == 0) {
                             thisCollider->owner->SetActive(false);
                             thatCollider->owner->SetActive(false);
+
                             return ENEMY_PROJECTILE_COLLISION;
                         }
                         if (thisCollider->colliderTag.compare("PLAYER") == 0 && thatCollider->colliderTag.compare("LEVEL_COMPLETE") == 0) {

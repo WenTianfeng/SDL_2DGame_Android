@@ -28,18 +28,13 @@ public:
         this->rangeRect.y = rangeY;
     }
     //无跟随构造方法
-    ComponentCamera(int width, int height, int rangeWidth, int rangeHeight, int rangeX, int rangeY){
+    ComponentCamera(int x,int y,int width, int height){
         this->followedEntity = nullptr;
 
         this->visibleRect.w = width;
         this->visibleRect.h = height;
-        this->visibleRect.x = this->followedEntity->GetComponent<ComponentTransform>()->position.x-this->visibleRect.w/2;
-        this->visibleRect.y = this->followedEntity->GetComponent<ComponentTransform>()->position.y-this->visibleRect.h/2;
-
-        this->rangeRect.w = rangeWidth;
-        this->rangeRect.h = rangeHeight;
-        this->rangeRect.x = rangeX;
-        this->rangeRect.y = rangeY;
+        this->visibleRect.x = x;
+        this->visibleRect.y = y;
     }
 
 

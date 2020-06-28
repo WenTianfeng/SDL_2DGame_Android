@@ -2,6 +2,7 @@
 #ifndef COMPONENT_BATTLE_ATTRIBUTES_H
 #define COMPONENT_BATTLE_ATTRIBUTES_H
 
+
 #include "../HeaderFiles/Component.h"
 
 class ComponentBattleAttributes:public Component{
@@ -11,6 +12,9 @@ public:
     int maxHP;
     int currentHP;
     int score;
+
+
+
     ComponentBattleAttributes(int grade,int maxHP,int score){
         this->grade = grade;
         this->maxHP = maxHP;
@@ -21,9 +25,10 @@ public:
 
     void Update(float deltaTime)
     {
-        this->score+=1;
 
     }
+
+
 
 };
 

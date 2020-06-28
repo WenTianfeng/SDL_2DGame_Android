@@ -21,6 +21,17 @@ public:
     virtual void DoOnStateIdle() = 0;
 };
 
+class IControlledByButton{
+
+public:
+    ~IControlledByButton(){}
+
+    virtual void DoOnButtonClick() = 0;
+    virtual void DoOnButtonPressed() = 0;
+
+};
+
+
 
 
 

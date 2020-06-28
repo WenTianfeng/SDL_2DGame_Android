@@ -6,8 +6,10 @@
 #include"../Components/ComponentProjectileLauncher.h"
 #include"../Components/ComponentJoystickControl.h"
 #include "../Components/ComponentAI.h"
-#include "../Components//ComponentBattleAttributes.h"
+#include "../Components/ComponentBattleAttributes.h"
 #include"../Components/ComponentCamera.h"
+#include "../Components/ComponentPlayerControl.h"
+#include "../Components/ComponentButton.h"
 
 
 
@@ -72,8 +74,8 @@ void Game::Initialize(int width,int height){
     }
 
 
-
-    LoadLevel(0);
+    LoadMenu();
+    //LoadLevel(0);
 
     isRunning = true;
 
@@ -81,8 +83,24 @@ void Game::Initialize(int width,int height){
 
 }
 
+//游戏初始化加载主菜单
+void Game::LoadMenu() {
+
+    //相机初始化
+    Entity& mainCamera_entity(entityManager->AddEntity("main-camera",LAYER_PLAYER));
+    mainCamera_entity.AddComponent<ComponentCamera>(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
+    //设定主相机
+    this->mainCamera = &mainCamera_entity;
 
 
+
+    assetManager->AddTexture("image-start-button-normal",std::string("images/army-group-1.png").c_str());
+    assetManager->AddTexture("image-start-button-pressed",std::string("images/army-group-3.png").c_str());
+
+    Entity& start_button_entity(entityManager->AddEntity("start_button", LAYER_UI));
+    start_button_entity.AddComponent<ComponentButton>("image-start-button-normal","image-start-button-pressed",1000,500,64,64);
+
+}
 
 //游戏初始化时加载关卡
 void Game::LoadLevel(int level){
@@ -95,14 +113,26 @@ void Game::LoadLevel(int level){
     assetManager->AddTexture("image-heliport", std::string("images/heliport.png").c_str());
     assetManager->AddTexture("image-button", std::string("images/button.png").c_str());
     assetManager->AddTexture("image-slide-area", std::string("images/slide-area.png").c_str());
+    assetManager->AddTexture("image-projectile-enemy", std::string("images/bullet-enemy.png").c_str());
     assetManager->AddTexture("image-projectile", std::string("images/bullet-friendly.png").c_str());
 
     //加载字体
-    assetManager->AddFont("font-charriot", std::string("fonts/charriot.ttf").c_str(), 20);
+    assetManager->AddFont("font-charriot", std::string("fonts/charriot.ttf").c_str(), 25);
+    assetManager->AddFont("font-arial", std::string("fonts/arial.ttf").c_str(), 25);
 
     //地形
     TerrainMap terrainMap("jungle-tilemap", 4, 32);
     terrainMap.LoadTilemap("tilemaps/jungle.txt", 25, 20);
+
+//============================================================================================
+    //Label
+    Entity& labelLevelName(Game::getInstance()->entityManager->AddEntity("LabelLevelName", LAYER_UI));
+    Entity& labelScore(Game::getInstance()->entityManager->AddEntity("Score", LAYER_UI));
+    Entity& labelHP(Game::getInstance()->entityManager->AddEntity("HP", LAYER_UI));
+    labelLevelName.AddComponent<ComponentTextLabel>(10, 10, "LEVEL 1", "font-charriot", SDL_Color{ 255,255,255,255 });
+    labelScore.AddComponent<ComponentTextLabel>(10,40,"SCORE : ","font-charriot",SDL_Color{255,255,0,255});
+    labelHP.AddComponent<ComponentTextLabel>(10,70,"HP : ","font-charriot",SDL_Color{255,0,0,255});
+
 
 //============================================================================================
     //玩家直升机对象
@@ -112,6 +142,7 @@ void Game::LoadLevel(int level){
     chopper_entity.AddComponent<ComponentSprite>("image-chopper",2,30,true,false);
     chopper_entity.AddComponent<ComponentCollider>("PLAYER", 0, 100, 32, 32);
     chopper_entity.AddComponent<ComponentProjectileLauncher>("image-projectile",10,"FRIENDLY_PROJECTILE");
+    chopper_entity.AddComponent<ComponentPlayerControl>(chopper_entity.GetComponent<ComponentBattleAttributes>(),labelHP.GetComponent<ComponentTextLabel>(),labelScore.GetComponent<ComponentTextLabel>());
 
 //============================================================================================
     //相机初始化
@@ -125,7 +156,7 @@ void Game::LoadLevel(int level){
     tank_entity.AddComponent<ComponentTransform>(100,100,0,0,64,64,1);
     tank_entity.AddComponent<ComponentSprite>("image-tank");
     tank_entity.AddComponent<ComponentCollider>("ENEMY", 100, 100, 32, 32);
-    tank_entity.AddComponent<ComponentProjectileLauncher>("image-projectile",10,"PROJECTILE");
+    tank_entity.AddComponent<ComponentProjectileLauncher>("image-projectile-enemy",5,"PROJECTILE");
     tank_entity.AddComponent<ComponentAI>(&chopper_entity,800);
 
     tank_entity.GetComponent<ComponentAI>()->AttachControlledThing(tank_entity.GetComponent<ComponentProjectileLauncher>());
@@ -153,12 +184,6 @@ void Game::LoadLevel(int level){
     joystick_attack_entity.GetComponent<ComponentJoystickControl>()->AttachControlledThing(chopper_entity.GetComponent<ComponentProjectileLauncher>());
 
 //============================================================================================
-    //左上角Label
-
-    Entity& labelLevelName(Game::getInstance()->entityManager->AddEntity("LabelLevelName", LAYER_UI));
-    labelLevelName.AddComponent<ComponentTextLabel>(10, 10, "LEVEL 1", "font-charriot", SDL_Color{ 255,255,255,255 });
-
-    //labelLevelName.GetComponent<ComponentTextLabel>()->SetLabelText("ssss","font-charriot");
 
 }
 
@@ -204,6 +229,7 @@ void Game::Update(){
 
     //碰撞检测
     CheckCollisions();
+
 
 
 
