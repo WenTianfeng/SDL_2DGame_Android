@@ -1,9 +1,9 @@
 # SDL_2DGame_Android
  基于SDL的2D游戏框架
 
-基于SDL（Simple DirectMedia Layer）的2D游戏框架实现，采用ECS架构，基于c++开发。
+基于SDL（Simple DirectMedia Layer）的2D游戏框架实现，采用ECS架构，基于c++开发，实现飞行战斗小游戏。
 
-使用AndroidStudio开发，涉及SDL相关库为：SDL2、SDL_image2.0、SDL_ttf2.0、SDL_mixer2.0。目前项目基于NDK编译，SDL相关库编译为so库，之后会将SDL库编译为静态库。
+使用AndroidStudio开发，涉及SDL相关库为：SDL2、SDL_image2.0、SDL_ttf2.0、SDL_mixer2.0。目前项目基于NDK编译。
 
 
 
